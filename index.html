@@ -4175,7 +4175,14 @@
     <source src="https://phoebeboo.github.io/mewoooo/1-second-of-silence.mp3" type="audio/mpeg">
   </audio><audio id="tts-audio-player" style="display:none;"></audio>
 
-
+<script>
+  // 注册 Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('Service Worker 注册成功！'))
+      .catch((err) => console.log('注册失败', err));
+  }
+</script>
 
 </body>
 </html>
